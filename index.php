@@ -23,11 +23,10 @@
 
 </style>
 
-
 </head>
 <body>
     
-</body>
+
 <div class = "formulaire">
     <h1>Récupérer les infos d'une ville à partir del'api :</h1>
     <h2><a href="https://geo.api.gouv.fr/api-geo.html">https://geo.api.gouv.fr/api-geo.html</a></h2>
@@ -37,7 +36,7 @@
 
 <div class="button-area">
     <form action="php/login.php" method="POST">
-        <input type="text" name="search" id="form-search" placeholder="Nom de la ville">
+        <input type="text" name="nom" id="form-search" placeholder="Nom de la ville">
         <input type="submit">
     </form>
 </div>
@@ -46,7 +45,8 @@
 <div class="view">
 </div>
 
-
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <script src="js/script.js"></script>
+
+    </body>
 </html>
