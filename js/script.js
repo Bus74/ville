@@ -11,7 +11,9 @@ $('form').submit(function(e){
     }else{
         //Requete AJAX pour récupérer le JSON de la page serveur.php (qui contiendra un tableau de villes)
             $.getJSON('https://geo.api.gouv.fr/communes/', $(this).serialize(), function (data){
-                //Création du tableau HTML avec en-têtes et tbody vide
+                
+            console.log(data);
+            //Création du tableau HTML avec en-têtes et tbody vide
                 let citiesTable = $(`
                     <table>
                         <thead>
@@ -34,16 +36,16 @@ $('form').submit(function(e){
                     let newCity= $('<tr></tr>');
                     //Création du premier <td> contenant la version protégée (.text) du nom de la voiture
                     let cityName = $('<td></td>');
-                    cityName.text(city.name);
+                    cityName.text(city.nom);
                     //Création du deuxième <td> contenant la version protégée (.text) du codepostal de la ville
                     let cityZipcode = $('<td></td>');
-                    cityZipcode.text(city.zipcode);
+                    cityZipcode.text(city.codesPostaux);
                     //Création du troisieme <td> contenant la version protégée (.text) de la population de la ville
                     let cityPopulation = $('<td></td>');
                     cityPopulation.text(city.population);
                     //Création du quatrième <td> contenant la version protégée (.text) du numero de departement
                     let cityNumber = $('<td></td>');
-                    cityNumber.text(city.number);
+                    cityNumber.text(city.codeDepartement);
 
                     //Insertion des 4 <td>
                     newCity.append(cityName);
